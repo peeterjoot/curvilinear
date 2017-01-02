@@ -1,0 +1,66 @@
+%
+% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+%{
+
+The cylindrical unit vectors can be expressed in Pauli matrices trivially.  From \cref{eqn:2Dcylindrical:200}
+
+\begin{subequations}
+\label{eqn:pauliRepresentation:1}
+\begin{dmath}\label{eqn:pauliRepresentation:2}
+\Bsigma \cdot \rhocap
+=
+\Bsigma \cdot \lr{ \Be_1 \exp\lr{ \Be_{12} \theta } }
+=
+\Bsigma \cdot \lr{ \Be_1 \lr{ \cos\theta + \Be_1 \Be_2 \sin\theta } }
+=
+\Bsigma \cdot \lr{ \Be_1 \cos\theta + \Be_2 \sin\theta }
+=
+\sigma_1 \cos\theta + \sigma_2 \sin\theta
+= 
+\PauliX \cos\theta + \PauliY \sin\theta
+=
+\begin{bmatrix}
+0 & \cos\theta - i \sin\theta \\
+\cos\theta + i \sin\theta & 0
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & e^{-i\theta} \\
+e^{i\theta} & 0
+\end{bmatrix}
+.
+\end{dmath}
+\begin{dmath}\label{eqn:pauliRepresentation:3}
+\Bsigma \cdot
+\thetacap 
+= 
+\Bsigma \cdot \lr{ \Be_2 \exp\lr{ \Be_{12} \theta } }
+=
+\Bsigma \cdot \lr{ \Be_2 \lr{ \cos\theta + \Be_1 \Be_2 \sin\theta } }
+= 
+\Bsigma \cdot \lr{ \Be_2 \cos\theta - \Be_1 \sin\theta }
+= 
+\sigma_2 \cos\theta - \sigma_1 \sin\theta
+= 
+\PauliY \cos\theta - \PauliX \sin\theta
+=
+\begin{bmatrix}
+0 & -i(\cos\theta - i\sin\theta) \\
+i(\cos\theta + i\sin\theta) & 0
+\end{bmatrix}
+=
+i 
+\begin{bmatrix}
+0 & -e^{-i\theta} \\
+e^{i\theta} & 0
+\end{bmatrix}
+\end{dmath}
+\end{subequations}
+
+Notice that translating any expression from GA notation really just requires a substitution \( \Be_k \rightarrow \sigma_k \), and the CAS implementation should be do the grunt work of such a translation.
+
+If the CAS system being used can handle functions of matrixes, there might not be a need to explicitly expand the rotation operator \( e^{\Be_{12} \theta } \) explicitly, as done above.
+
+%}

@@ -1,0 +1,109 @@
+%
+% Copyright © 2017 Peeter Joot.  All Rights Reserved.
+% Licenced as described in the file LICENSE under the root directory of this GIT repository.
+%
+One of the simplest curvilinear coordinate systems are cylindrical coordinates in a plane.  The parameterization associated with such a space is
+
+\begin{dmath}\label{eqn:2Dcylindrical:100}
+\Bx(\rho, \theta) = \rho \Be_1 \exp\lr{ \Be_{12} \theta }.
+\end{dmath}
+
+The curvilinear coordinate basis is therefore
+
+\begin{subequations}
+\label{eqn:2Dcylindrical:120}
+\begin{dmath}\label{eqn:2Dcylindrical:140}
+\Bx_\rho
+= \PD{\rho}{} \lr{ \rho \Be_1 \exp\lr{ \Be_{12} \theta } }
+= \Be_1 \exp\lr{ \Be_{12} \theta }
+\end{dmath}
+\begin{dmath}\label{eqn:2Dcylindrical:160}
+\Bx_\theta
+= \PD{\theta}{} \lr{ \rho \Be_1 \exp\lr{ \Be_{12} \theta } }
+= \rho
+\Be_1 \Be_{12} \exp\lr{ \Be_{12} \theta }
+= \rho
+\Be_2 \exp\lr{ \Be_{12} \theta }.
+\end{dmath}
+\end{subequations}
+
+Noting that this is a normal set of vectors, the reciprocal basis can be found by inspection
+
+\begin{dmath}\label{eqn:2Dcylindrical:180}
+\begin{aligned}
+\Bx^\rho &= \Be_1 \exp\lr{ \Be_{12} \theta } \\
+\Bx^\theta &= \inv{\rho} \Be_2 \exp\lr{ \Be_{12} \theta }.
+\end{aligned}
+\end{dmath}
+
+In this particular parmameterization, it is convieient to define a locally orthonormal coordinate basis \( \setlr{ \rhocap, \thetacap } \)
+
+\begin{dmath}\label{eqn:2Dcylindrical:200}
+\begin{aligned}
+\rhocap &= \Be_1 \exp\lr{ \Be_{12} \theta } \\
+\thetacap &= \Be_2 \exp\lr{ \Be_{12} \theta },
+\end{aligned}
+\end{dmath}
+
+so that \( \Bx^\rho = \Bx_\rho = \rhocap \), \( \Bx_\theta = \rho \rhocap \), and \( \Bx^\theta = \rhocap/\rho \).
+
+The volume element for this subspace is
+\begin{dmath}\label{eqn:2Dcylindrical:220}
+d\Bx_\rho \wedge d\Bx_\theta
+=
+d\rho d\theta
+\Bx_\rho \wedge \Bx_\theta
+=
+d\rho d\theta
+\gpgradetwo{
+\Bx_\rho \Bx_\theta
+}
+=
+d\rho d\theta
+\gpgradetwo{
+\Be_1 \exp\lr{ \Be_{12} \theta } \rho
+\Be_2 \exp\lr{ \Be_{12} \theta }
+}
+=
+\rho d\rho d\theta
+\gpgradetwo{
+\Be_1 \Be_2 \exp\lr{ -\Be_{12} \theta }
+\exp\lr{ \Be_{12} \theta }
+}
+=
+\rho d\rho d\theta \Be_{12}.
+\end{dmath}
+
+Observe that the (oriented) volume of a circular region of radius \( r \) in this space has the expected result
+
+\begin{dmath}\label{eqn:2Dcylindrical:360}
+\int d\Bx_\rho \wedge d\Bx_\theta
+=
+\int_0^r \rho d\rho \int_0^{2\pi} d\theta \Be_{12}
+= \pi r^2 \Be_{12}.
+\end{dmath}
+
+Given a vector \( \Bv = \Be_1 f(\rho, \theta) + \Be_2 g(\rho, \theta) \), the cylindrical representation \( \Bv = \Bv_\rho \rhocap + \Bv_\theta \thetacap \) can be found by computing the dot products
+
+\begin{subequations}
+\label{eqn:2Dcylindrical:420}
+\begin{dmath}\label{eqn:2Dcylindrical:440}
+\Bv \cdot \rhocap
+=
+\gpgradezero{ (\Be_1 f + \Be_2 g) \Be_1 e^{\Be_{12} \theta} }
+=
+f \cos\theta + g \sin\theta
+\end{dmath}
+\begin{dmath}\label{eqn:2Dcylindrical:460}
+\Bv \cdot \thetacap
+=
+\gpgradezero{ (\Be_1 f + \Be_2 g) \Be_2 e^{\Be_{12} \theta} }
+=
+g \cos\theta - f \sin\theta,
+\end{dmath}
+\end{subequations}
+
+so
+\begin{dmath}\label{eqn:2Dcylindrical:480}
+\Bv = \lr{ f \cos\theta + g \sin\theta } \rhocap + \lr{ g \cos\theta - f \sin\theta } \thetacap.
+\end{dmath}

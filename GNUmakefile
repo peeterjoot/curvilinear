@@ -1,6 +1,6 @@
-THISDIR := frequencydomain
+THISDIR := curvilinear
 THISBOOK := $(THISDIR)
-BASEVER := 13a3089
+BASEVER := 0179e84
 
 include ../latex/make.vars
 
