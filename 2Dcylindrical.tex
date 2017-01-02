@@ -36,6 +36,51 @@ Noting that this is a normal set of vectors, the reciprocal basis can be found b
 \end{aligned}
 \end{dmath}
 
+For completeness, it's worth verifying that the gradient representation of the reciprocal frame provides this same result.  Those gradients can be computed by implicit differentiation of
+\begin{dmath}\label{eqn:2Dcylindrical:500}
+\begin{aligned}
+x^2 + y^2 &= \rho^2 \\
+\tan\theta &= y/x,
+\end{aligned}
+\end{dmath}
+
+The derivatives are
+
+\begin{dmath}\label{eqn:2Dcylindrical:520}
+\begin{aligned}
+2 \rho \PD{x}{\rho} &= 2 x \\
+2 \rho \PD{y}{\rho} &= 2 y \\
+\inv{\cos^2\theta} \PD{x}{\theta} &= -\frac{y}{x^2} \\
+\inv{\cos^2\theta} \PD{y}{\theta} &= \inv{x},
+\end{aligned}
+\end{dmath}
+
+The gradients are
+\begin{subequations}
+\label{eqn:2Dcylindrical:540}
+\begin{dmath}\label{eqn:2Dcylindrical:560}
+\spacegrad \rho
+= \inv{\rho} (\cos\theta, \sin\theta)
+= e_1 e^{\Be_{12} \theta}
+= \Bx^\rho
+\end{dmath}
+\begin{dmath}\label{eqn:2Dcylindrical:580}
+\spacegrad \theta
+=
+\cos^2 \theta \lr{ -\frac{y}{x^2}, \inv{x} }
+=
+\inv{\rho} ( -\sin\theta, \cos\theta )
+=
+\frac{\Be_2}{\rho} ( \cos\theta + \Be_{12} \sin\theta )
+=
+\frac{\Be_2}{\rho} e^{ \Be_{12} \theta }
+=
+\Bx^\theta,
+\end{dmath}
+\end{subequations}
+
+which is consistent with the result found by inspection as desired.
+
 In this particular parmameterization, it is convieient to define a locally orthonormal coordinate basis \( \setlr{ \rhocap, \thetacap } \)
 
 \begin{dmath}\label{eqn:2Dcylindrical:200}

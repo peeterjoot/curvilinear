@@ -1,2 +1,6 @@
 ../latex/bin/lgrep curvilinear.tex | tee o ; . ./o
 perl -p -i ../latex/bin/latexRegex.pl curvilinear.tex
+../latex/bin/lgrep curvilinearGradient.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl curvilinearGradient.tex
+../latex/bin/lgrep 2Dcylindrical.tex | tee o ; . ./o
+perl -p -i ../latex/bin/latexRegex.pl 2Dcylindrical.tex
