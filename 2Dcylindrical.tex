@@ -85,12 +85,22 @@ In this particular parmameterization, it is convieient to define a locally ortho
 
 \begin{dmath}\label{eqn:2Dcylindrical:200}
 \begin{aligned}
-\rhocap &= \Be_1 \exp\lr{ \Be_{12} \theta } \\
-\thetacap &= \Be_2 \exp\lr{ \Be_{12} \theta },
+\rhocap &= \Bx_\rho = \Be_1 \exp\lr{ \Be_{12} \theta } \\
+\thetacap &= \inv{r} \Bx_\theta = \Be_2 \exp\lr{ \Be_{12} \theta },
 \end{aligned}
 \end{dmath}
 
-so that \( \Bx^\rho = \Bx_\rho = \rhocap \), \( \Bx_\theta = \rho \rhocap \), and \( \Bx^\theta = \rhocap/\rho \).
+so that \( \Bx^\rho = \Bx_\rho = \rhocap \), \( \Bx_\theta = \rho \rhocap \), and \( \Bx^\theta = \rhocap/\rho \), and the gradient is
+
+\begin{dmath}\label{eqn:2Dcylindrical:600}
+\spacegrad
+=
+\Bx^\rho \PD{\rho}{}
++ \Bx^\theta \PD{\theta}{}
+=
+\rhocap \PD{\rho}{}
++\inv{\rho} \thetacap \PD{\theta}{}.
+\end{dmath}
 
 The volume element for this subspace is
 \begin{dmath}\label{eqn:2Dcylindrical:220}
