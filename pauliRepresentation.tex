@@ -63,4 +63,24 @@ Notice that translating any expression from GA notation really just requires a s
 
 If the CAS system being used can handle functions of matrixes, there might not be a need to explicitly expand the rotation operator \( e^{\Be_{12} \theta } \) explicitly, as done above.
 
+When dealing with a vector $\BA= A_{\rho}\rhocap + A_{\theta}\thetacap  + A_z \hat{\Bz}$, in the circular cylindrical coordinate system, the relative Pauli matrix is: 
+\begin{dmath}\label{eqn:pauliRepresentation:3a}
+\tilde{A }=
+\begin{bmatrix}
+A_z & (A_{\rho} - i A_{\theta})e^{-i\theta} \\
+(A_{\rho} + i A_{\theta})e^{i\theta} & -A_z
+\end{bmatrix} \, .
+\end{dmath}
+
+The nabla operator in cylindrical coordinates system can be expressed in terms of Pauli matrices as
+%
+\begin{dmath}\label{eqn:pauliRepresentation:3b}
+\tilde{\nabla} =
+\begin{bmatrix}
+\partial_z & e^{-i\theta}(\partial_{\rho} - \frac {i}{\rho} \partial_{\theta}) \\
+e^{i\theta}(\partial_{\rho} + \frac {i}{\rho} \partial_{\theta}) & -\partial_z
+\end{bmatrix} \, .
+\end{dmath}
+%
+It is important to note that in the nabla operator the term $e^{\pm i\theta}$ is before the derivatives, while in (\ref{eqn:pauliRepresentation:3a}) this term has to be differentiated by the nabla operator.
 %}

@@ -5,7 +5,7 @@
 One of the simplest curvilinear coordinate systems are cylindrical coordinates in a plane.  The parameterization associated with such a space is
 
 \begin{dmath}\label{eqn:2Dcylindrical:100}
-\Bx(\rho, \theta) = \rho \Be_1 \exp\lr{ \Be_{12} \theta }.
+\Bx(\rho, \phi) = \rho \Be_1 \exp\lr{ \Be_{12} \phi }.
 \end{dmath}
 
 The curvilinear coordinate basis is therefore
@@ -14,16 +14,16 @@ The curvilinear coordinate basis is therefore
 \label{eqn:2Dcylindrical:120}
 \begin{dmath}\label{eqn:2Dcylindrical:140}
 \Bx_\rho
-= \PD{\rho}{} \lr{ \rho \Be_1 \exp\lr{ \Be_{12} \theta } }
-= \Be_1 \exp\lr{ \Be_{12} \theta }
+= \PD{\rho}{} \lr{ \rho \Be_1 \exp\lr{ \Be_{12} \phi } }
+= \Be_1 \exp\lr{ \Be_{12} \phi }
 \end{dmath}
 \begin{dmath}\label{eqn:2Dcylindrical:160}
-\Bx_\theta
-= \PD{\theta}{} \lr{ \rho \Be_1 \exp\lr{ \Be_{12} \theta } }
+\Bx_\phi
+= \PD{\phi}{} \lr{ \rho \Be_1 \exp\lr{ \Be_{12} \phi } }
 = \rho
-\Be_1 \Be_{12} \exp\lr{ \Be_{12} \theta }
+\Be_1 \Be_{12} \exp\lr{ \Be_{12} \phi }
 = \rho
-\Be_2 \exp\lr{ \Be_{12} \theta }.
+\Be_2 \exp\lr{ \Be_{12} \phi }.
 \end{dmath}
 \end{subequations}
 
@@ -31,8 +31,8 @@ Noting that this is a normal set of vectors, the reciprocal basis can be found b
 
 \begin{dmath}\label{eqn:2Dcylindrical:180}
 \begin{aligned}
-\Bx^\rho &= \Be_1 \exp\lr{ \Be_{12} \theta } \\
-\Bx^\theta &= \inv{\rho} \Be_2 \exp\lr{ \Be_{12} \theta }.
+\Bx^\rho &= \Be_1 \exp\lr{ \Be_{12} \phi } \\
+\Bx^\phi &= \inv{\rho} \Be_2 \exp\lr{ \Be_{12} \phi }.
 \end{aligned}
 \end{dmath}
 
@@ -40,7 +40,7 @@ For completeness, it's worth verifying that the gradient representation of the r
 \begin{dmath}\label{eqn:2Dcylindrical:500}
 \begin{aligned}
 x^2 + y^2 &= \rho^2 \\
-\tan\theta &= y/x,
+\tan\phi &= y/x,
 \end{aligned}
 \end{dmath}
 
@@ -50,8 +50,8 @@ The derivatives are
 \begin{aligned}
 2 \rho \PD{x}{\rho} &= 2 x \\
 2 \rho \PD{y}{\rho} &= 2 y \\
-\inv{\cos^2\theta} \PD{x}{\theta} &= -\frac{y}{x^2} \\
-\inv{\cos^2\theta} \PD{y}{\theta} &= \inv{x},
+\inv{\cos^2\phi} \PD{x}{\phi} &= -\frac{y}{x^2} \\
+\inv{\cos^2\phi} \PD{y}{\phi} &= \inv{x},
 \end{aligned}
 \end{dmath}
 
@@ -60,105 +60,105 @@ The gradients are
 \label{eqn:2Dcylindrical:540}
 \begin{dmath}\label{eqn:2Dcylindrical:560}
 \spacegrad \rho
-= \inv{\rho} (\cos\theta, \sin\theta)
-= e_1 e^{\Be_{12} \theta}
+= \inv{\rho} (\cos\phi, \sin\phi)
+= e_1 e^{\Be_{12} \phi}
 = \Bx^\rho
 \end{dmath}
 \begin{dmath}\label{eqn:2Dcylindrical:580}
-\spacegrad \theta
+\spacegrad \phi
 =
-\cos^2 \theta \lr{ -\frac{y}{x^2}, \inv{x} }
+\cos^2 \phi \lr{ -\frac{y}{x^2}, \inv{x} }
 =
-\inv{\rho} ( -\sin\theta, \cos\theta )
+\inv{\rho} ( -\sin\phi, \cos\phi )
 =
-\frac{\Be_2}{\rho} ( \cos\theta + \Be_{12} \sin\theta )
+\frac{\Be_2}{\rho} ( \cos\phi + \Be_{12} \sin\phi )
 =
-\frac{\Be_2}{\rho} e^{ \Be_{12} \theta }
+\frac{\Be_2}{\rho} e^{ \Be_{12} \phi }
 =
-\Bx^\theta,
+\Bx^\phi,
 \end{dmath}
 \end{subequations}
 
 which is consistent with the result found by inspection as desired.
 
-In this particular parmameterization, it is convieient to define a locally orthonormal coordinate basis \( \setlr{ \rhocap, \thetacap } \)
+In this particular parmameterization, it is convieient to define a locally orthonormal coordinate basis \( \setlr{ \rhocap, \phicap } \)
 
 \begin{dmath}\label{eqn:2Dcylindrical:200}
 \begin{aligned}
-\rhocap &= \Bx_\rho = \Be_1 \exp\lr{ \Be_{12} \theta } \\
-\thetacap &= \inv{r} \Bx_\theta = \Be_2 \exp\lr{ \Be_{12} \theta },
+\rhocap &= \Bx_\rho = \Be_1 \exp\lr{ \Be_{12} \phi } \\
+\phicap &= \inv{r} \Bx_\phi = \Be_2 \exp\lr{ \Be_{12} \phi },
 \end{aligned}
 \end{dmath}
 
-so that \( \Bx^\rho = \Bx_\rho = \rhocap \), \( \Bx_\theta = \rho \rhocap \), and \( \Bx^\theta = \rhocap/\rho \), and the gradient is
+so that \( \Bx^\rho = \Bx_\rho = \rhocap \), \( \Bx_\phi = \rho \rhocap \), and \( \Bx^\phi = \rhocap/\rho \), and the gradient is
 
 \begin{dmath}\label{eqn:2Dcylindrical:600}
 \spacegrad
 =
 \Bx^\rho \PD{\rho}{}
-+ \Bx^\theta \PD{\theta}{}
++ \Bx^\phi \PD{\phi}{}
 =
 \rhocap \PD{\rho}{}
-+\inv{\rho} \thetacap \PD{\theta}{}.
++\inv{\rho} \phicap \PD{\phi}{}.
 \end{dmath}
 
 The volume element for this subspace is
 \begin{dmath}\label{eqn:2Dcylindrical:220}
-d\Bx_\rho \wedge d\Bx_\theta
+d\Bx_\rho \wedge d\Bx_\phi
 =
-d\rho d\theta
-\Bx_\rho \wedge \Bx_\theta
+d\rho d\phi
+\Bx_\rho \wedge \Bx_\phi
 =
-d\rho d\theta
+d\rho d\phi
 \gpgradetwo{
-\Bx_\rho \Bx_\theta
+\Bx_\rho \Bx_\phi
 }
 =
-d\rho d\theta
+d\rho d\phi
 \gpgradetwo{
-\Be_1 \exp\lr{ \Be_{12} \theta } \rho
-\Be_2 \exp\lr{ \Be_{12} \theta }
+\Be_1 \exp\lr{ \Be_{12} \phi } \rho
+\Be_2 \exp\lr{ \Be_{12} \phi }
 }
 =
-\rho d\rho d\theta
+\rho d\rho d\phi
 \gpgradetwo{
-\Be_1 \Be_2 \exp\lr{ -\Be_{12} \theta }
-\exp\lr{ \Be_{12} \theta }
+\Be_1 \Be_2 \exp\lr{ -\Be_{12} \phi }
+\exp\lr{ \Be_{12} \phi }
 }
 =
-\rho d\rho d\theta \Be_{12}.
+\rho d\rho d\phi \Be_{12}.
 \end{dmath}
 
 Observe that the (oriented) volume of a circular region of radius \( r \) in this space has the expected result
 
 \begin{dmath}\label{eqn:2Dcylindrical:360}
-\int d\Bx_\rho \wedge d\Bx_\theta
+\int d\Bx_\rho \wedge d\Bx_\phi
 =
-\int_0^r \rho d\rho \int_0^{2\pi} d\theta \Be_{12}
+\int_0^r \rho d\rho \int_0^{2\pi} d\phi \Be_{12}
 = \pi r^2 \Be_{12}.
 \end{dmath}
 
-Given a vector \( \Bv = \Be_1 f(\rho, \theta) + \Be_2 g(\rho, \theta) \), the cylindrical representation \( \Bv = \Bv_\rho \rhocap + \Bv_\theta \thetacap \) can be found by computing the dot products
+Given a vector \( \Bv = \Be_1 f(\rho, \phi) + \Be_2 g(\rho, \phi) \), the cylindrical representation \( \Bv = \Bv_\rho \rhocap + \Bv_\phi \phicap \) can be found by computing the dot products
 
 \begin{subequations}
 \label{eqn:2Dcylindrical:420}
 \begin{dmath}\label{eqn:2Dcylindrical:440}
 \Bv \cdot \rhocap
 =
-\gpgradezero{ (\Be_1 f + \Be_2 g) \Be_1 e^{\Be_{12} \theta} }
+\gpgradezero{ (\Be_1 f + \Be_2 g) \Be_1 e^{\Be_{12} \phi} }
 =
-f \cos\theta + g \sin\theta
+f \cos\phi + g \sin\phi
 \end{dmath}
 \begin{dmath}\label{eqn:2Dcylindrical:460}
-\Bv \cdot \thetacap
+\Bv \cdot \phicap
 =
-\gpgradezero{ (\Be_1 f + \Be_2 g) \Be_2 e^{\Be_{12} \theta} }
+\gpgradezero{ (\Be_1 f + \Be_2 g) \Be_2 e^{\Be_{12} \phi} }
 =
-g \cos\theta - f \sin\theta,
+g \cos\phi - f \sin\phi,
 \end{dmath}
 \end{subequations}
 
 so
 \begin{dmath}\label{eqn:2Dcylindrical:480}
-\Bv = \lr{ f \cos\theta + g \sin\theta } \rhocap + \lr{ g \cos\theta - f \sin\theta } \thetacap.
+\Bv = \lr{ f \cos\phi + g \sin\phi } \rhocap + \lr{ g \cos\phi - f \sin\phi } \phicap.
 \end{dmath}
