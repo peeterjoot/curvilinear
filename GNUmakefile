@@ -1,6 +1,5 @@
 THISDIR := curvilinear
 THISBOOK := $(THISDIR)
-BASEVER := 0179e84
 
 include ../latex/make.vars
 
