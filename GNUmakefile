@@ -3,7 +3,7 @@ THISBOOK := $(THISDIR)
 
 include ../latex/make.vars
 
-FIGURES := ../../figures/$(THISBOOK)
+FIGURES := ../figures/$(THISBOOK)
 SOURCE_DIRS += $(FIGURES)
 
 GENERATED_PDFS += $(THISBOOK).pdf
