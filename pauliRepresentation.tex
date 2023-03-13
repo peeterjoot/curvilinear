@@ -8,55 +8,46 @@ The cylindrical unit vectors can be expressed in Pauli matrices trivially.  From
 
 \begin{subequations}
 \label{eqn:pauliRepresentation:1}
-\begin{dmath}\label{eqn:pauliRepresentation:2}
+\begin{equation}\label{eqn:pauliRepresentation:2}
+\begin{aligned}
 \Bsigma \cdot \rhocap
-=
-\Bsigma \cdot \lr{ \Be_1 \exp\lr{ \Be_{12} \theta } }
-=
-\Bsigma \cdot \lr{ \Be_1 \lr{ \cos\theta + \Be_1 \Be_2 \sin\theta } }
-=
-\Bsigma \cdot \lr{ \Be_1 \cos\theta + \Be_2 \sin\theta }
-=
-\sigma_1 \cos\theta + \sigma_2 \sin\theta
-= 
-\PauliX \cos\theta + \PauliY \sin\theta
-=
-\begin{bmatrix}
+&= \Bsigma \cdot \lr{ \Be_1 \exp\lr{ \Be_{12} \theta } } \\
+&= \Bsigma \cdot \lr{ \Be_1 \lr{ \cos\theta + \Be_1 \Be_2 \sin\theta } } \\
+&= \Bsigma \cdot \lr{ \Be_1 \cos\theta + \Be_2 \sin\theta } \\
+&= \sigma_1 \cos\theta + \sigma_2 \sin\theta \\
+&= \PauliX \cos\theta + \PauliY \sin\theta \\
+&= \begin{bmatrix}
 0 & \cos\theta - i \sin\theta \\
 \cos\theta + i \sin\theta & 0
-\end{bmatrix}
-=
+\end{bmatrix} \\
+&=
 \begin{bmatrix}
 0 & e^{-i\theta} \\
 e^{i\theta} & 0
 \end{bmatrix}
 .
-\end{dmath}
-\begin{dmath}\label{eqn:pauliRepresentation:3}
+\end{aligned}
+\end{equation}
+\begin{equation}\label{eqn:pauliRepresentation:3}
+\begin{aligned}
 \Bsigma \cdot
 \thetacap 
-= 
-\Bsigma \cdot \lr{ \Be_2 \exp\lr{ \Be_{12} \theta } }
-=
-\Bsigma \cdot \lr{ \Be_2 \lr{ \cos\theta + \Be_1 \Be_2 \sin\theta } }
-= 
-\Bsigma \cdot \lr{ \Be_2 \cos\theta - \Be_1 \sin\theta }
-= 
-\sigma_2 \cos\theta - \sigma_1 \sin\theta
-= 
-\PauliY \cos\theta - \PauliX \sin\theta
-=
-\begin{bmatrix}
+&= \Bsigma \cdot \lr{ \Be_2 \exp\lr{ \Be_{12} \theta } } \\
+&= \Bsigma \cdot \lr{ \Be_2 \lr{ \cos\theta + \Be_1 \Be_2 \sin\theta } } \\
+&= \Bsigma \cdot \lr{ \Be_2 \cos\theta - \Be_1 \sin\theta } \\
+&= \sigma_2 \cos\theta - \sigma_1 \sin\theta \\
+&= \PauliY \cos\theta - \PauliX \sin\theta \\
+&= \begin{bmatrix}
 0 & -i(\cos\theta - i\sin\theta) \\
 i(\cos\theta + i\sin\theta) & 0
-\end{bmatrix}
-=
-i 
+\end{bmatrix} \\
+&= i 
 \begin{bmatrix}
 0 & -e^{-i\theta} \\
 e^{i\theta} & 0
-\end{bmatrix}
-\end{dmath}
+\end{bmatrix}.
+\end{aligned}
+\end{equation}
 \end{subequations}
 
 Notice that translating any expression from GA notation really just requires a substitution \( \Be_k \rightarrow \sigma_k \), and the CAS implementation should be do the grunt work of such a translation.
@@ -65,54 +56,54 @@ We have therefore seen that in  cylindrical coordinates a different set of Pauli
 
 \begin{subequations}
 \label{eqn:pauliRepresentation:1}
-\begin{dmath}\label{eqn:pauliRepresentation:cyl1}
+\begin{equation}\label{eqn:pauliRepresentation:cyl1}
 \sigma_{\rho} =
 \begin{bmatrix}
 0 & e^{-i\phi} \\
 e^{i\phi} & 0
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
-\begin{dmath}\label{eqn:pauliRepresentation:cyl2}
+\begin{equation}\label{eqn:pauliRepresentation:cyl2}
 \sigma_{\phi}
 =
 \begin{bmatrix}
 0 & - i \, e^{-i\phi} \\
 i \,e^{i\phi} & 0
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
-\begin{dmath}\label{eqn:pauliRepresentation:cyl3}
+\begin{equation}\label{eqn:pauliRepresentation:cyl3}
 \sigma_{z}
 =
 \begin{bmatrix}
 1 & 0 \\
 0 & -1
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 \end{subequations}
 
 
 If the CAS system being used can handle functions of matrices, there might not be a need to explicitly expand the rotation operator \( e^{\Be_{12} \phi } \) explicitly, as done above.
 
 When dealing with a vector $\BA= A_{\rho}\rhocap + A_{\phi}\hat{\phi}  + A_z \hat{\Bz}$, in the circular cylindrical coordinate system, the relative Pauli matrix is: 
-\begin{dmath}\label{eqn:pauliRepresentation:3a}
+\begin{equation}\label{eqn:pauliRepresentation:3a}
 \tilde{A }=
 \begin{bmatrix}
 A_z & e^{-i\phi}(A_{\rho} - i A_{\phi}) \\
 e^{i\phi}(A_{\rho} + i A_{\phi}) & -A_z
 \end{bmatrix} \, .
-\end{dmath}
+\end{equation}
 
 The nabla operator in cylindrical coordinates system can be expressed in terms of Pauli matrices as
 %
-\begin{dmath}\label{eqn:pauliRepresentation:3b}
+\begin{equation}\label{eqn:pauliRepresentation:3b}
 \tilde{\nabla} =
 \begin{bmatrix}
 \partial_z & e^{-i\phi}(\partial_{\rho} - \frac {i}{\rho} \partial_{\phi}) \\
 e^{i\phi}(\partial_{\rho} + \frac {i}{\rho} \partial_{\phi}) & -\partial_z
 \end{bmatrix} \, .
-\end{dmath}
+\end{equation}
 %
 It is important to note that in the nabla operator the term $e^{\pm i\phi}$ is before the derivatives, while in (\ref{eqn:pauliRepresentation:3a}) this term has to be differentiated by the nabla operator.
 
@@ -121,30 +112,30 @@ For the spherical coordinate system, by introducing the definitions $c_{\theta}=
 %
 \begin{subequations}
 \label{eqn:pauliRepresentationsp:1}
-\begin{dmath}\label{eqn:pauliRepresentation:sph1}
+\begin{equation}\label{eqn:pauliRepresentation:sph1}
 \sigma_{r} =
 \begin{bmatrix}
 c_{\theta} & s_{\theta} \, e^{-i\phi} \\
 s_{\theta}\,e^{i\phi} & -c_{\theta} \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
-\begin{dmath}\label{eqn:pauliRepresentation:sph2}
+\begin{equation}\label{eqn:pauliRepresentation:sph2}
 \sigma_{\theta}
 =
 \begin{bmatrix}
 -s_{\theta} &  c_{\theta} \, e^{-i\phi} \\
 c_{\theta} \,e^{i\phi} & s_{\theta}
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
-\begin{dmath}\label{eqn:pauliRepresentation:sph3}
+\begin{equation}\label{eqn:pauliRepresentation:sph3}
 \sigma_{\phi}
 =
 \begin{bmatrix}
 0 & - i \, e^{-i\phi} \\
 i \,e^{i\phi} & 0
 \end{bmatrix}
-\end{dmath}
+\end{equation}
 %
 \end{subequations}
 

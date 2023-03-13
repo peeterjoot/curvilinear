@@ -8,30 +8,30 @@ While the reciprocal frame can be computed explcitly, it can also be computed ve
 
 Given a curvilinear basis \( \setlr{ \Bx_k } \), the reciprocal frame vectors are
 
-\begin{dmath*}
+\begin{equation*}
 \Bx^i = \spacegrad u_i.
-\end{dmath*}
+\end{equation*}
 } % theorem
 
 \maketheorem{Curvilinear representation of the gradient}{thm:curvilinearGradient:2}{
 
 Given an n-parameter representation of a vector that spans an n-dimensional space
 
-\begin{dmath*}
+\begin{equation*}
 \Bx = \Bx(u_1, \cdots, u_n),
-\end{dmath*}
+\end{equation*}
 
 the curvilinear representation of the gradient is
 
-\begin{dmath*}
+\begin{equation*}
 \spacegrad = \sum_i \Bx^i \PD{u_i}{}.
-\end{dmath*}
+\end{equation*}
 
 It is often convienent to write this as
 
-\begin{dmath*}
+\begin{equation*}
 \spacegrad = \sum_{i=1}^n \Bx^i \partial_i,
-\end{dmath*}
+\end{equation*}
 
 or the same with sums over mixed indexes implied.
 
@@ -39,50 +39,42 @@ or the same with sums over mixed indexes implied.
 
 The proof of both are both just applications of the chain rule.  Assuming \cref{thm:curvilinearGradient:1} to be true, then the dot products of the reciprocal frame vectors with the curvilinear basis vectors are
 
-\begin{dmath}\label{eqn:curvilinearGradient:20}
+\begin{equation}\label{eqn:curvilinearGradient:20}
+\begin{aligned}
 \Bx^i \cdot \Bx_j
-=
-(\spacegrad u_i) \cdot \PD{u_j}{\Bx}
-=
-\sum_{r,s=1}^n
-\lr{ \Be_r \PD{x_r}{u_i} } \cdot \lr{ \Be_s \PD{u_j}{x_s} }
-=
-\sum_{r,s=1}^n (\Be_r \cdot \Be_s)
-\PD{x_r}{u_i} \PD{u_j}{x_s}
-=
-\sum_{r,s=1}^n \delta_{rs}
-\PD{x_r}{u_i} \PD{u_j}{x_s}
-=
-\sum_{r=1}^n
-\PD{x_r}{u_i} \PD{u_j}{x_r}
-=
-\PD{u_i}{u_j}
-=
-\delta_{ij}.
-\end{dmath}
+&= (\spacegrad u_i) \cdot \PD{u_j}{\Bx} \\
+&= \sum_{r,s=1}^n \lr{ \Be_r \PD{x_r}{u_i} } \cdot \lr{ \Be_s \PD{u_j}{x_s} } \\
+&= \sum_{r,s=1}^n (\Be_r \cdot \Be_s) \PD{x_r}{u_i} \PD{u_j}{x_s} \\
+&= \sum_{r,s=1}^n \delta_{rs} \PD{x_r}{u_i} \PD{u_j}{x_s} \\
+&= \sum_{r=1}^n \PD{x_r}{u_i} \PD{u_j}{x_r} \\
+&= \PD{u_i}{u_j} \\
+&= \delta_{ij}.
+\end{aligned}
+\end{equation}
 
 This shows that \( \Bx^i = \spacegrad u_i \) has the properties required of the reciprocal frame, proving the theorem.
 
 The curvilinear representation of the gradient follows from the gradient representation of the reciprocal frame, and the chain rule.  The sum in \cref{thm:curvilinearGradient:2} expands as
 
-\begin{dmath}\label{eqn:curvilinearGradient:40}
+\begin{equation}\label{eqn:curvilinearGradient:40}
+\begin{aligned}
 \sum_{i=1}^n
 \Bx^i \PD{u_i}{F}
-=
+&=
 \sum_{i=1}^n
-(\spacegrad u_i) \PD{u_i}{F}
-=
+(\spacegrad u_i) \PD{u_i}{F} \\
+&=
 \sum_{i,j=1}^n
 \Be_j \PD{x_j}{u_i}
-\PD{u_i}{F}
-=
+\PD{u_i}{F} \\
+&=
 \sum_{j=1}^n
 \Be_j
-\PD{x_j}{F}
-=
+\PD{x_j}{F} \\
+&=
 \spacegrad F,
-\end{dmath}
-
+\end{aligned}
+\end{equation}
 which proves the result.
 
 Note that the gradient representation of the reciprocal frame is mainly useful for theoretical reasons (i.e. the proof of the curvilinear representation of the gradient).  In many cases it will likely be more difficult to compute the reciprocal frame vectors using the gradient of the parameters than
